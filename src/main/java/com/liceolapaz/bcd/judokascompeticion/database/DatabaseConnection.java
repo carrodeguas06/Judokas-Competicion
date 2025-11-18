@@ -12,7 +12,7 @@ public class DatabaseConnection {
      private static Connection connection = null;
      private DatabaseConnection() {}
 
-    private static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed())
         {
             try {
