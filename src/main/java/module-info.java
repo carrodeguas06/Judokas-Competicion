@@ -1,6 +1,7 @@
 module com.liceolapaz.bcd.judokascompeticion {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.liceolapaz.bcd.judokascompeticion to javafx.fxml;
