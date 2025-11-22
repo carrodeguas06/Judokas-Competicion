@@ -69,6 +69,5 @@ public class JudokasController implements Initializable {
 
         judokas.clear();
         judokas.addAll(judokasDAO.obtenerJudokas());
-        //TODO Conseguir que aparezcan los judokas en la tabla
     }
 }
