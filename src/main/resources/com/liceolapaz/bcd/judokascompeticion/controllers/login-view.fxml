@@ -38,7 +38,7 @@
                 </font>
             </Label>
             <PasswordField fx:id="contrasena" maxWidth="300.0" minWidth="300.0" promptText="Contraseña" />
-            <Button fx:id="boton" text="Iniciar sesion" mnemonicParsing="_Login" onAction="#onClic" />
+            <Button fx:id="boton" text="_Iniciar sesion" onAction="#onClic" />
         </children>
     </VBox>
 

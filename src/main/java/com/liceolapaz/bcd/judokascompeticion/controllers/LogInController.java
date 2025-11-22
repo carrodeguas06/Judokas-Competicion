@@ -51,6 +51,7 @@ public class LogInController implements Initializable {
             stage.setScene(scene);
             stage.setTitle("Judokas - Panel Principal");
             stage.show();
+            stage.centerOnScreen();
         }
     }
     private boolean validar()

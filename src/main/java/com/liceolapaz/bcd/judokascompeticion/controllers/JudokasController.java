@@ -21,16 +21,11 @@ import java.util.ResourceBundle;
 public class JudokasController implements Initializable {
     @FXML
     public TableView<Judoka> table;
-    @FXML
-    public TableColumn tId;
-    @FXML
-    public TableColumn tnombre;
-    @FXML
-    public TableColumn tApellido;
-    @FXML
-    public TableColumn tPais;
-    @FXML
-    public TableColumn tCinturon;
+    @FXML public TableColumn<Judoka, Integer> tId;
+    @FXML public TableColumn<Judoka, String> tnombre;
+    @FXML public TableColumn<Judoka, String> tApellido;
+    @FXML public TableColumn<Judoka, String> tPais;
+    @FXML public TableColumn<Judoka, String> tCinturon;
     private JudokasDAO judokasDAO = new JudokaDAOImpl();
     private static ObservableList<Judoka> judokas;
     private User usuarioLogueado;
@@ -50,11 +45,11 @@ public class JudokasController implements Initializable {
 
     public void meterEnTabla()
     {
-        tId.setCellFactory(new PropertyValueFactory<>("id"));
-        tnombre.setCellFactory(new PropertyValueFactory<>("nombre"));
-        tApellido.setCellFactory(new PropertyValueFactory<>("apellido"));
-        tPais.setCellFactory(new PropertyValueFactory<>("pais"));
-        tCinturon.setCellFactory(new PropertyValueFactory<>("cinturon"));
+        tId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        tnombre.setCellValueFactory(new PropertyValueFactory<>("name"));
+        tApellido.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        tPais.setCellValueFactory(new PropertyValueFactory<>("country"));
+        tCinturon.setCellValueFactory(new PropertyValueFactory<>("belt"));
 
         table.setItems(judokas);
     }
@@ -69,5 +64,8 @@ public class JudokasController implements Initializable {
 
         judokas.clear();
         judokas.addAll(judokasDAO.obtenerJudokas());
+        meterEnTabla();
+
+
     }
 }

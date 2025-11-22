@@ -36,7 +36,8 @@ public class MainController {
     private void handleLogout(ActionEvent event) throws IOException {
         SessionManager.getInstance().clearSession();
 
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) mainContentPane.getScene().getWindow();
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(AppView.LOGIN.getFxmlFile())));
         Scene scene = new Scene(root);
 
