@@ -1,7 +1,7 @@
 package com.liceolapaz.bcd.judokascompeticion.controllers;
 
-import com.liceolapaz.bcd.judokascompeticion.AppView;
-import com.liceolapaz.bcd.judokascompeticion.SessionManager;
+import com.liceolapaz.bcd.judokascompeticion.navigation.AppView;
+import com.liceolapaz.bcd.judokascompeticion.navigation.SessionManager;
 import com.liceolapaz.bcd.judokascompeticion.dao.usuarios.UsuarioDAOImpl;
 import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
 import javafx.application.Platform;
@@ -87,5 +87,6 @@ public class LogInController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usuarios.addAll(usuarioDAO.obtenerUsuarios());
         Platform.runLater(() -> usuario.requestFocus());
+        //TODO Conseguir que aparezcan los judokas en la tabla
     }
 }
