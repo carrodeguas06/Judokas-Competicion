@@ -6,16 +6,18 @@ public class Usuario {
     private String apellido;
     private String nombreUsuario;
     private String contrasena;
+    private boolean admin;
 
     public Usuario() {
     }
 
-    public Usuario(int id, String nombre, String apellido, String nombreUsuario, String password) {
+    public Usuario(int id, String nombre, String apellido, String nombreUsuario, String password, Boolean admin) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.nombreUsuario = nombreUsuario;
         this.contrasena = password;
+        this.admin = admin;
     }
 
     public int getId() {

@@ -28,19 +28,39 @@ public class UsuarioDAOImpl implements UsuariosDAO {
                         rs.getString("name"),
                         rs.getString("last_name"),
                         rs.getString("nickname"),
-                        rs.getString("password")
+                        rs.getString("password"),
+                        rs.getBoolean("admin")
                 );
                 usuarios.add(usuario);
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.out.println("Error al obtener usuarios");
         }
         return usuarios;
     }
 
     @Override
     public Usuario obtenerUsuario(int id) {
-        return null;
+        Usuario usuario = null;
+        try(
+                Connection conn = DatabaseConnection.getConnection();
+                PreparedStatement stmt = conn.prepareStatement("SELECT * FROM users WHERE id = ?");
+
+        ) {
+            ResultSet rs = stmt.executeQuery();
+
+            usuario = new Usuario(
+                    rs.getInt("id"),
+                    rs.getString("name"),
+                    rs.getString("last_name"),
+                    rs.getString("nickname"),
+                    rs.getString("password"),
+                    rs.getBoolean("admin")
+            );
+            } catch (SQLException ex) {
+            System.out.println("Error al obtener usuario");;
+        }
+        return usuario;
     }
 }
