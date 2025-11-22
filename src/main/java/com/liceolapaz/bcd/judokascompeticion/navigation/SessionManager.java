@@ -1,4 +1,4 @@
-package com.liceolapaz.bcd.judokascompeticion;
+package com.liceolapaz.bcd.judokascompeticion.navigation;
 
 import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
 

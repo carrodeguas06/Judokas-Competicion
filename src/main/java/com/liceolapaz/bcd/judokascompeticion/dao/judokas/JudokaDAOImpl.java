@@ -2,7 +2,6 @@ package com.liceolapaz.bcd.judokascompeticion.dao.judokas;
 
 import com.liceolapaz.bcd.judokascompeticion.database.DatabaseConnection;
 import com.liceolapaz.bcd.judokascompeticion.pojo.Judoka;
-import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -44,7 +43,7 @@ public class JudokaDAOImpl implements JudokasDAO{
 
         try (
                 Connection conn = DatabaseConnection.getConnection();
-                PreparedStatement ps = conn.prepareStatement("INSERT INTO judokas (id, name, last_name, country, belt, special_tecnique) VALUES (?, ?, ?, ?, ?,?)");
+                PreparedStatement ps = conn.prepareStatement("INSERT INTO judokas (id, name, last_name, country, belt, special_tecnique) VALUES (?, ?, ?, ?, ?,?)")
                 ) {
             ps.setInt(1,judoka.getId());
             ps.setString(2, judoka.getNombre());
@@ -63,7 +62,7 @@ public class JudokaDAOImpl implements JudokasDAO{
     public void eliminarJudoka(Judoka judoka) {
         try (
                 Connection conn = DatabaseConnection.getConnection();
-                PreparedStatement ps = conn.prepareStatement("DELETE FROM judokas WHERE id=?");
+                PreparedStatement ps = conn.prepareStatement("DELETE FROM judokas WHERE id=?")
                 ){
             ps.setInt(1,judoka.getId());
         } catch (SQLException e) {
@@ -75,7 +74,7 @@ public class JudokaDAOImpl implements JudokasDAO{
     public void editarJudoka(Judoka judoka) {
         try (
                 Connection conn = DatabaseConnection.getConnection();
-                PreparedStatement ps = conn.prepareStatement("UPDATE judokas SET name=?, last_name=?, country=?, belt=?, special_tecnique=? WHERE id=?");
+                PreparedStatement ps = conn.prepareStatement("UPDATE judokas SET name=?, last_name=?, country=?, belt=?, special_tecnique=? WHERE id=?")
         ){
             ps.setString(1, judoka.getNombre());
             ps.setString(2, judoka.getApellido());
@@ -93,7 +92,7 @@ public class JudokaDAOImpl implements JudokasDAO{
         Judoka judoka = null;
         try (
                 Connection conn = DatabaseConnection.getConnection();
-                PreparedStatement ps = conn.prepareStatement("select * from judokas where id=?");
+                PreparedStatement ps = conn.prepareStatement("select * from judokas where id=?")
         ){
             ps.setInt(1,id);
             ResultSet rs = ps.executeQuery();

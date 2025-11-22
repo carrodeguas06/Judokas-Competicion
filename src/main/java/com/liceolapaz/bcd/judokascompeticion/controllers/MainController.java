@@ -1,8 +1,8 @@
 package com.liceolapaz.bcd.judokascompeticion.controllers;
 
-import com.liceolapaz.bcd.judokascompeticion.AppView;
-import com.liceolapaz.bcd.judokascompeticion.SessionManager;
-import com.liceolapaz.bcd.judokascompeticion.ViewSwitcher;
+import com.liceolapaz.bcd.judokascompeticion.navigation.AppView;
+import com.liceolapaz.bcd.judokascompeticion.navigation.SessionManager;
+import com.liceolapaz.bcd.judokascompeticion.navigation.ViewSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

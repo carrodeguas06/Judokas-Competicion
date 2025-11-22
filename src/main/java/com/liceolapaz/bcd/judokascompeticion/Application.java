@@ -1,5 +1,6 @@
 package com.liceolapaz.bcd.judokascompeticion;
 
+import com.liceolapaz.bcd.judokascompeticion.navigation.AppView;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

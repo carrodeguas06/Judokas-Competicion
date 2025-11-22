@@ -1,4 +1,4 @@
-package com.liceolapaz.bcd.judokascompeticion;
+package com.liceolapaz.bcd.judokascompeticion.navigation;
 
 public enum AppView {
     LOGIN("/com/liceolapaz/bcd/judokascompeticion/controllers/login-view.fxml"),

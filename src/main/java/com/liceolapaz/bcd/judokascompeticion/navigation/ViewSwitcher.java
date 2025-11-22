@@ -1,4 +1,4 @@
-package com.liceolapaz.bcd.judokascompeticion;
+package com.liceolapaz.bcd.judokascompeticion.navigation;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
