@@ -1,27 +1,43 @@
 package com.liceolapaz.bcd.judokascompeticion.database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 public class DatabaseConnection {
-     private static final String USER = "root";
-     private static final String PASSWORD = "";
-     private static final String HOST = "jdbc:mysql://localhost/judo_proyect_db";
-     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-     private static Connection connection = null;
-     private DatabaseConnection() {}
 
-    public static Connection getConnection() throws SQLException {
-        if (connection == null || connection.isClosed())
-        {
+    // Variable estática, pero empieza siendo NULL
+    private static SessionFactory sessionFactory;
+
+    // Constructor privado para que nadie haga "new DatabaseConnection()"
+    private DatabaseConnection() { }
+
+    /**
+     * Método estático para obtener la sesión.
+     * Crea la conexión SOLO si no existe todavía.
+     */
+    public static SessionFactory getSessionFactory() {
+        // AQUÍ es donde sustituimos el bloque static.
+        // Verificamos: ¿Ya existe la fábrica?
+        if (sessionFactory == null) {
             try {
-                Class.forName(DRIVER);
-                connection = DriverManager.getConnection(HOST, USER, PASSWORD);
-            } catch (ClassNotFoundException e) {
-                System.out.println("Error al conectar con la base de datos");
+                System.out.println("--> Configurando Hibernate por primera vez...");
+
+                // Si es null, la creamos ahora mismo
+                sessionFactory = new Configuration().configure().buildSessionFactory();
+
+                System.out.println("--> ¡Conectado!");
+            } catch (Throwable ex) {
+                System.err.println("--> ERROR al crear la SessionFactory: " + ex);
+                throw new ExceptionInInitializerError(ex);
             }
         }
-        return connection;
+        // Si ya existía, simplemente la devolvemos
+        return sessionFactory;
+    }
+
+    public static void shutdown() {
+        if (sessionFactory != null) {
+            sessionFactory.close();
+        }
     }
 }

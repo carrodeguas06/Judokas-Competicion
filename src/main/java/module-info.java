@@ -3,14 +3,16 @@ module com.liceolapaz.bcd.judokascompeticion {
     requires javafx.fxml;
     requires java.sql;
     requires mysql.connector.j;
+    requires jakarta.persistence;
+    requires org.hibernate.orm.core;
+    requires java.naming;
 
 
+    opens pojos to org.hibernate.orm.core;
     opens com.liceolapaz.bcd.judokascompeticion to javafx.fxml;
     exports com.liceolapaz.bcd.judokascompeticion;
     exports com.liceolapaz.bcd.judokascompeticion.controllers;
     opens com.liceolapaz.bcd.judokascompeticion.controllers to javafx.fxml;
-    exports com.liceolapaz.bcd.judokascompeticion.pojo;
-    opens com.liceolapaz.bcd.judokascompeticion.pojo to javafx.fxml;
     exports com.liceolapaz.bcd.judokascompeticion.navigation;
     opens com.liceolapaz.bcd.judokascompeticion.navigation to javafx.fxml;
 }

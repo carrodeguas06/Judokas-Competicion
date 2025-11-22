@@ -3,7 +3,7 @@ package com.liceolapaz.bcd.judokascompeticion.controllers;
 import com.liceolapaz.bcd.judokascompeticion.navigation.AppView;
 import com.liceolapaz.bcd.judokascompeticion.navigation.SessionManager;
 import com.liceolapaz.bcd.judokascompeticion.dao.usuarios.UsuarioDAOImpl;
-import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
+import pojos.User;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,10 +26,10 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class LogInController implements Initializable {
-    static List<Usuario> usuarios = new ArrayList<>();
+    static List<User> usuarios = new ArrayList<>();
     static UsuarioDAOImpl usuarioDAO = new UsuarioDAOImpl();
 
-    private static Usuario usuarioSelecionado;
+    private static User usuarioSelecionado;
 
     @FXML
     private TextField usuario;
@@ -66,8 +66,8 @@ public class LogInController implements Initializable {
         }
         else
         {
-            for (Usuario u : usuarios) {
-                if (u.getContrasena().equals(contrasena.getText()) && (u.getNombreUsuario().equals(usuario.getText())))
+            for (User u : usuarios) {
+                if (u.getPassword().equals(contrasena.getText()) && (u.getNickname().equals(usuario.getText())))
                 {
                     usuarioSelecionado = u;
                     return true;
@@ -87,6 +87,5 @@ public class LogInController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usuarios.addAll(usuarioDAO.obtenerUsuarios());
         Platform.runLater(() -> usuario.requestFocus());
-        //TODO Conseguir que aparezcan los judokas en la tabla
     }
 }

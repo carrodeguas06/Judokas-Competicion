@@ -1,10 +1,10 @@
 package com.liceolapaz.bcd.judokascompeticion.navigation;
 
-import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
+import pojos.User;
 
 public class SessionManager {
     private static SessionManager instance;
-    private Usuario usuario;
+    private User usuario;
 
     private SessionManager(){}
 
@@ -16,10 +16,10 @@ public class SessionManager {
         }
         return instance;
     }
-    public Usuario getUsuario() {
+    public User getUsuario() {
         return usuario;
     }
-    public void setUsuario(Usuario usuario)
+    public void setUsuario(User usuario)
     {
         this.usuario = usuario;
     }

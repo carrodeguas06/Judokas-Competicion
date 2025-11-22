@@ -3,8 +3,8 @@ package com.liceolapaz.bcd.judokascompeticion.controllers;
 import com.liceolapaz.bcd.judokascompeticion.navigation.SessionManager;
 import com.liceolapaz.bcd.judokascompeticion.dao.judokas.JudokaDAOImpl;
 import com.liceolapaz.bcd.judokascompeticion.dao.judokas.JudokasDAO;
-import com.liceolapaz.bcd.judokascompeticion.pojo.Judoka;
-import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
+import pojos.User;
+import pojos.Judoka;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -33,7 +33,7 @@ public class JudokasController implements Initializable {
     public TableColumn tCinturon;
     private JudokasDAO judokasDAO = new JudokaDAOImpl();
     private static ObservableList<Judoka> judokas;
-    private Usuario usuarioLogueado;
+    private User usuarioLogueado;
     private Judoka judokaSeleccionado;
     public void handleAnh() {
     }
@@ -69,6 +69,6 @@ public class JudokasController implements Initializable {
 
         judokas.clear();
         judokas.addAll(judokasDAO.obtenerJudokas());
-
+        //TODO Conseguir que aparezcan los judokas en la tabla
     }
 }
