@@ -8,4 +8,6 @@ module com.liceolapaz.bcd.judokascompeticion {
     exports com.liceolapaz.bcd.judokascompeticion;
     exports com.liceolapaz.bcd.judokascompeticion.controllers;
     opens com.liceolapaz.bcd.judokascompeticion.controllers to javafx.fxml;
+    exports com.liceolapaz.bcd.judokascompeticion.pojo;
+    opens com.liceolapaz.bcd.judokascompeticion.pojo to javafx.fxml;
 }

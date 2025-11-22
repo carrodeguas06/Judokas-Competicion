@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.MainController">
+
+    <top>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Cerrar Sesión"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Ver">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowJudokas" text="Mi Perfil"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <BorderPane fx:id="mainContentPane"/>
+    </center>
+</BorderPane>

@@ -1,6 +1,6 @@
-package com.liceolapaz.bcd.judokascompeticion.dao;
+package com.liceolapaz.bcd.judokascompeticion.dao.usuarios;
 
-import com.liceolapaz.bcd.judokascompeticion.Usuario;
+import com.liceolapaz.bcd.judokascompeticion.pojo.Usuario;
 
 import java.util.List;
 

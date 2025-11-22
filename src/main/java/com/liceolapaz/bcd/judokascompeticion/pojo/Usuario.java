@@ -1,4 +1,4 @@
-package com.liceolapaz.bcd.judokascompeticion;
+package com.liceolapaz.bcd.judokascompeticion.pojo;
 
 public class Usuario {
     private int id;

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
      private static final String USER = "root";
      private static final String PASSWORD = "";
-     private static final String HOST = "jdbc:mysql://localhost/judo_proyect_bd";
+     private static final String HOST = "jdbc:mysql://localhost/judo_proyect_db";
      private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
      private static Connection connection = null;
      private DatabaseConnection() {}
