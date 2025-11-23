@@ -27,6 +27,17 @@ public class Judoka {
     @JoinColumn(name = "especial_tecnique", nullable = false)
     private Tecnique especialTecnique;
 
+    public Judoka() {
+    }
+
+    public Judoka(String text, String text1, String value, String value1, Object value2) {
+        this.name = text;
+        this.lastName = text1;
+        this.country = value1;
+        this.belt = value;
+        this.especialTecnique = (Tecnique) value2;
+    }
+
     public Integer getId() {
         return id;
     }

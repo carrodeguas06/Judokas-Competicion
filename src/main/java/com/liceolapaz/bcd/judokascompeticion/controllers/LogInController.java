@@ -89,4 +89,8 @@ public class LogInController implements Initializable {
         usuarios.addAll(usuarioDAO.obtenerUsuarios());
         Platform.runLater(() -> usuario.requestFocus());
     }
+
+    public static User getUsuarioSelecionado() {
+        return usuarioSelecionado;
+    }
 }

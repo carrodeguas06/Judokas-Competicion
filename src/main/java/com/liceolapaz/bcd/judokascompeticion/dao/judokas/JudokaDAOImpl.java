@@ -10,21 +10,10 @@ import java.util.ArrayList;
 
 public class JudokaDAOImpl implements JudokasDAO {
     @Override
-    public List<Judoka> obtenerJudokas() {
-        List<Judoka> judokas = new ArrayList<>();
+    public List obtenerJudokas() {
         Session session = DatabaseConnection.getSessionFactory().openSession();
-
-        try {
-            Query query = session.createQuery("FROM Judoka j", Judoka.class);
-            judokas = query.getResultList();
-        } catch (Exception e) {
-            System.out.println("No se pueden encontrar judokas");
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return judokas;
+        Query query = session.createQuery("FROM Judoka j", Judoka.class);
+        return query.getResultList();
     }
 
     @Override
@@ -77,19 +66,40 @@ public class JudokaDAOImpl implements JudokasDAO {
 
     @Override
     public void eliminarJudoka(Judoka judoka) {
+        if (judoka == null || judoka.getId() == null) {
+            System.err.println("Error: El objeto Judoka o su ID es nulo.");
+            return;
+        }
+
         Session session = DatabaseConnection.getSessionFactory().openSession();
 
         try {
             session.beginTransaction();
-            Query query = session.createQuery("DELETE from Judoka j where id = :id");
-            query.setParameter("id", judoka.getId());
-            query.executeUpdate();
+
+            Integer judokaId = judoka.getId();
+
+            Query query1 = session.createQuery("DELETE FROM ResultadosJudoka r WHERE r.judoka.id= :judokaId");
+            query1.setParameter("judokaId", judokaId);
+            query1.executeUpdate();
+
+
+            Query query3 = session.createQuery("DELETE FROM JudokaUser r WHERE r.idjudoka.id = :judokaId");
+            query3.setParameter("judokaId", judokaId);
+            query3.executeUpdate();
+
+
+            Query query2 = session.createQuery("DELETE FROM Judoka j WHERE j.id = :judokaId");
+            query2.setParameter("judokaId", judokaId);
+            query2.executeUpdate();
             session.getTransaction().commit();
+
+
         } catch (Exception e) {
             if (session.getTransaction() != null) {
                 session.getTransaction().rollback();
             }
-            System.out.println("No se pudo eliminar el judoka");
+            System.err.println("No se pudo eliminar el judoka.");
+
         } finally {
             if (session != null) {
                 session.close();
