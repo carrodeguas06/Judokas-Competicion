@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.JudokasController">
+<VBox prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.JudokasController">
    <children>
       <TextField fx:id="searchBar" prefHeight="43.0" prefWidth="969.0" promptText="Buscar">
          <VBox.margin>

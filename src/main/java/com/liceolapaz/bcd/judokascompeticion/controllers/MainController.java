@@ -24,7 +24,7 @@ public class MainController {
     public void initialize()
     {
         ViewSwitcher.setMainPane(mainContentPane);
-        ViewSwitcher.switchView(AppView.JUDOKAS);
+        ViewSwitcher.switchView(AppView.BIENVENIDO);
     }
 
     @FXML

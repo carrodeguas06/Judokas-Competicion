@@ -10,14 +10,14 @@
     <top>
         <MenuBar>
             <menus>
-                <Menu mnemonicParsing="false" text="Archivo">
+                <Menu mnemonicParsing="false" text="Judokas">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Cerrar Sesión"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowJudokas" text="Judokas"/>
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Ver">
+                <Menu mnemonicParsing="false" text="Mi Usuario">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleShowJudokas" text="Mi Perfil"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Cerrar Sesión"/>
                     </items>
                 </Menu>
             </menus>

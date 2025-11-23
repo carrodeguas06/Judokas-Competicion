@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.BienvenidoController">
+   <children>
+      <Label fx:id="bienvenidoLabel" text="¡Bienvenido!">
+         <font>
+            <Font name="DejaVu Sans Bold" size="38.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" prefHeight="522.0" prefWidth="990.0">
+         <children>
+            <Label text="Bienvenido a tu portal centralizado para la gestión integral de la actividad de Judo." textAlignment="CENTER">
+               <font>
+                  <Font name="Droid Sans" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+</VBox>
