@@ -30,6 +30,14 @@ import java.util.ResourceBundle;
 
 public class JudokasController implements Initializable {
     @FXML
+    private Button bAnh;
+    @FXML
+    private Button bMod;
+    @FXML
+    private Button bLim;
+    @FXML
+    private Button bEli;
+    @FXML
     private ComboBox<String> iTecnica;
     @FXML
     private TextField iNombre;
@@ -141,6 +149,20 @@ public class JudokasController implements Initializable {
         }
     }
 
+    public void actualizarVista(User user) {
+        if (user.getAdmin()!=1) {
+            iNombre.setEditable(false);
+            iApellido.setEditable(false);
+            iCinturon.setEditable(false);
+            iPais.setEditable(false);
+            iTecnica.setEditable(false);
+            bAnh.setVisible(false);
+            bMod.setVisible(false);
+            bLim.setVisible(false);
+            bEli.setVisible(false);
+        }
+    }
+
     public void handleEli() {
         if (judokaSeleccionado == null) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -195,6 +217,8 @@ public class JudokasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        actualizarVista(SessionManager.getInstance().getUsuario());
 
         judokas = FXCollections.observableArrayList();
 

@@ -9,8 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Menu;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import pojos.User;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -19,17 +21,28 @@ import java.util.Objects;
 public class MainController {
     @FXML
     public BorderPane mainContentPane;
+    @FXML
+    private Menu admin;
 
     @FXML
     public void initialize()
     {
         ViewSwitcher.setMainPane(mainContentPane);
         ViewSwitcher.switchView(AppView.BIENVENIDO);
+        actualizarVista(SessionManager.getInstance().getUsuario());
     }
 
     @FXML
     private void handleShowJudokas()
     {ViewSwitcher.switchView(AppView.JUDOKAS);}
+
+    public void actualizarVista(User user) {
+        if (user.getAdmin()==1) {
+            admin.setVisible(true);
+        } else {
+            admin.setVisible(false);
+        }
+    }
 
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {
