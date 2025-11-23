@@ -71,4 +71,8 @@ public class MainController {
     public void handleMiPerfil(ActionEvent event) {
         ViewSwitcher.switchView(AppView.MIPERFIL);
     }
+
+    public void handleCompeticiones(ActionEvent event) {
+        ViewSwitcher.switchView(AppView.COMPETICIONES);
+    }
 }

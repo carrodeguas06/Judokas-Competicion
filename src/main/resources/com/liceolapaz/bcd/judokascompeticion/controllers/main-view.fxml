@@ -15,6 +15,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleShowJudokas" text="Judokas"/>
                     </items>
                 </Menu>
+                <Menu mnemonicParsing="false" text="Competiciones">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleCompeticiones" text="Coompeticiones"/>
+                    </items>
+                </Menu>
                 <Menu fx:id="admin" mnemonicParsing="false" text="Administrador">
                     <items>
 

@@ -2,8 +2,6 @@ package pojos;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "competitions")
 public class Competition {
@@ -12,30 +10,21 @@ public class Competition {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "nombre", nullable = false)
-    private String nombre;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Lob
-    @Column(name = "tipo_competicion", nullable = false)
-    private String tipoCompeticion;
+    @Column(name = "type", nullable = false)
+    private String type;
 
-    @Column(name = "lugar")
-    private String lugar;
+    @Column(name = "city")
+    private String city;
 
-    @Column(name = "pais", length = 100)
-    private String pais;
+    @Column(name = "country", length = 100)
+    private String country;
 
-    @Column(name = "fecha_inicio")
-    private LocalDate fechaInicio;
-
-    @Column(name = "fecha_fin")
-    private LocalDate fechaFin;
-
-    @Column(name = "temporada")
-    private Integer temporada;
-
-    @Column(name = "enlace")
-    private String enlace;
+    @Column(name = "temp")
+    private Integer temp;
 
     public Integer getId() {
         return id;
@@ -45,68 +34,44 @@ public class Competition {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTipoCompeticion() {
-        return tipoCompeticion;
+    public String getType() {
+        return type;
     }
 
-    public void setTipoCompeticion(String tipoCompeticion) {
-        this.tipoCompeticion = tipoCompeticion;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getLugar() {
-        return lugar;
+    public String getCity() {
+        return city;
     }
 
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getPais() {
-        return pais;
+    public String getCountry() {
+        return country;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
+    public Integer getTemp() {
+        return temp;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public LocalDate getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(LocalDate fechaFin) {
-        this.fechaFin = fechaFin;
-    }
-
-    public Integer getTemporada() {
-        return temporada;
-    }
-
-    public void setTemporada(Integer temporada) {
-        this.temporada = temporada;
-    }
-
-    public String getEnlace() {
-        return enlace;
-    }
-
-    public void setEnlace(String enlace) {
-        this.enlace = enlace;
+    public void setTemp(Integer temp) {
+        this.temp = temp;
     }
 
 }

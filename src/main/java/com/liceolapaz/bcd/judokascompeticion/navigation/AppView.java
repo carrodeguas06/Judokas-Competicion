@@ -6,6 +6,7 @@ public enum AppView {
     MIPERFIL("/com/liceolapaz/bcd/judokascompeticion/controllers/miPerfil-view.fxml"),
     EDITARPERFIL("/com/liceolapaz/bcd/judokascompeticion/controllers/editar-view.fxml"),
     JUDOKAS("/com/liceolapaz/bcd/judokascompeticion/controllers/judokas-view.fxml"),
+    COMPETICIONES("/com/liceolapaz/bcd/judokascompeticion/controllers/competiciones-view.fxml"),
     MAIN("/com/liceolapaz/bcd/judokascompeticion/controllers/main-view.fxml"),
     BIENVENIDO("/com/liceolapaz/bcd/judokascompeticion/controllers/bienvenido-view.fxml");
 

@@ -2,7 +2,8 @@ package com.liceolapaz.bcd.judokascompeticion;
 
 public enum Comboboxes {
     BELTS("src/main/resources/comboboxes/belts.txt"),
-    COUNTRIES("src/main/resources/comboboxes/countries.txt"),;
+    COUNTRIES("src/main/resources/comboboxes/countries.txt"),
+    COMPETITION_TYPES("src/main/resources/comboboxes/competition-types.txt"),;
 
     private final String url;
 

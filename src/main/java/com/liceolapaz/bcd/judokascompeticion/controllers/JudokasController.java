@@ -208,8 +208,8 @@ public class JudokasController implements Initializable {
     private void buscarJudokas(String terminoBusqueda) {
         judokas.clear();
         if (terminoBusqueda != null && !terminoBusqueda.trim().isEmpty()) {
-            List<Judoka> jugadoresEncontrados = judokaDAO.obtenerJudokas(terminoBusqueda);
-            judokas.addAll(jugadoresEncontrados);
+            List<Judoka> judokasEncontrados = judokaDAO.obtenerJudokas(terminoBusqueda);
+            judokas.addAll(judokasEncontrados);
         } else {
             judokas.addAll(judokaDAO.obtenerJudokas());
         }
