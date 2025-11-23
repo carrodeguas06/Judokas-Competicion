@@ -11,7 +11,7 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(AppView.LOGIN.getFxmlFile()));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 300);
+        Scene scene = new Scene(fxmlLoader.load(), 500, 350);
         stage.setTitle("Inicio de sesión");
         stage.setResizable(false);
         stage.setScene(scene);

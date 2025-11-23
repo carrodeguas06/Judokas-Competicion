@@ -52,4 +52,18 @@ public class UsuarioDAOImpl implements UsuariosDAO {
         session.getTransaction().commit();
         return null;
     }
+
+    @Override
+    public User editarUsuario(User user) {
+        Session session = DatabaseConnection.getSessionFactory().openSession();
+        Query query = session.createQuery("update User u set u.name = :name, u.lastName = :lastName, u.nickname = :nickName , u.admin = :admin, u.password = :pass where u.id = :id", User.class);
+        query.setParameter("name", user.getName());
+        query.setParameter("lastName", user.getLastName());
+        query.setParameter("nickName", user.getNickname());
+        query.setParameter("admin", user.getAdmin());
+        query.setParameter("pass", user.getPassword());
+        query.setParameter("id", user.getId());
+        query.executeUpdate();
+        return null;
+    }
 }

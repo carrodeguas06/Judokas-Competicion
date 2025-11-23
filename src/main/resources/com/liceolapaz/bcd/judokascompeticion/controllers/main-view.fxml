@@ -17,6 +17,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Mi Usuario">
                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleMiPerfil" text="Mi Perfil"/>
                         <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Cerrar Sesión"/>
                     </items>
                 </Menu>

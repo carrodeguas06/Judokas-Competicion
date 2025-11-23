@@ -7,6 +7,7 @@ module com.liceolapaz.bcd.judokascompeticion {
     requires org.hibernate.orm.core;
     requires java.naming;
     requires javafx.graphics;
+    requires javafx.base;
 
     opens pojos to org.hibernate.orm.core, javafx.base;
     opens com.liceolapaz.bcd.judokascompeticion to javafx.fxml;

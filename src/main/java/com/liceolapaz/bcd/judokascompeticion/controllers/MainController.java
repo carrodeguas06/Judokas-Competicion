@@ -55,4 +55,7 @@ public class MainController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    public void handleMiPerfil(ActionEvent event) {
+        ViewSwitcher.switchView(AppView.MIPERFIL);
+    }
 }
