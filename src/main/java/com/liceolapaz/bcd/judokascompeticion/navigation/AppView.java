@@ -2,6 +2,7 @@ package com.liceolapaz.bcd.judokascompeticion.navigation;
 
 public enum AppView {
     LOGIN("/com/liceolapaz/bcd/judokascompeticion/controllers/login-view.fxml"),
+    REGISTER("/com/liceolapaz/bcd/judokascompeticion/controllers/register-view.fxml"),
     JUDOKAS("/com/liceolapaz/bcd/judokascompeticion/controllers/judokas-view.fxml"),
     MAIN("/com/liceolapaz/bcd/judokascompeticion/controllers/main-view.fxml"),
     BIENVENIDO("/com/liceolapaz/bcd/judokascompeticion/controllers/bienvenido-view.fxml");

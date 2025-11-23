@@ -43,4 +43,13 @@ public class UsuarioDAOImpl implements UsuariosDAO {
         }
         return usuario;
     }
+
+    @Override
+    public User crearUsuario(User user) {
+        Session session = DatabaseConnection.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        session.persist(user);
+        session.getTransaction().commit();
+        return null;
+    }
 }

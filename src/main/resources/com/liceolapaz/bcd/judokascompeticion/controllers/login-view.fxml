@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.text.Font?>
-    <VBox alignment="CENTER" maxHeight="500" maxWidth="300" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.LogInController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.LogInController">
         <children>
             <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" text="Inicia Sesión" textAlignment="CENTER">
                 <font>
@@ -38,7 +33,7 @@
                 </font>
             </Label>
             <PasswordField fx:id="contrasena" maxWidth="300.0" minWidth="300.0" promptText="Contraseña" />
-            <Button fx:id="boton" text="_Iniciar sesion" onAction="#onClic" />
+            <Button fx:id="boton" onAction="#onClic" text="_Iniciar sesion" />
+      <Button fx:id="register" mnemonicParsing="false" onAction="#registerClic" text="No tengo cuenta" />
         </children>
     </VBox>
-

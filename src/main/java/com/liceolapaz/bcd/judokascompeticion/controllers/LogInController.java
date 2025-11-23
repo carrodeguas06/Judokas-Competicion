@@ -30,6 +30,8 @@ public class LogInController implements Initializable {
     static UsuarioDAOImpl usuarioDAO = new UsuarioDAOImpl();
 
     private static User usuarioSelecionado;
+    @FXML
+    private Button register;
 
     @FXML
     private TextField usuario;
@@ -92,5 +94,15 @@ public class LogInController implements Initializable {
 
     public static User getUsuarioSelecionado() {
         return usuarioSelecionado;
+    }
+
+    public void registerClic(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(AppView.REGISTER.getFxmlFile())));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Judokas - Registrarse");
+        stage.show();
+        stage.centerOnScreen();
     }
 }

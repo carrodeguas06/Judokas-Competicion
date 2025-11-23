@@ -6,6 +6,7 @@ module com.liceolapaz.bcd.judokascompeticion {
     requires jakarta.persistence;
     requires org.hibernate.orm.core;
     requires java.naming;
+    requires javafx.graphics;
 
     opens pojos to org.hibernate.orm.core, javafx.base;
     opens com.liceolapaz.bcd.judokascompeticion to javafx.fxml;

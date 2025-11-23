@@ -6,7 +6,6 @@ import org.hibernate.Session;
 import pojos.Judoka;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class JudokaDAOImpl implements JudokasDAO {
     @Override
