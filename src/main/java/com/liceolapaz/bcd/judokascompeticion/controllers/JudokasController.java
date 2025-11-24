@@ -30,6 +30,8 @@ import java.util.ResourceBundle;
 
 public class JudokasController implements Initializable {
     @FXML
+    private Label cantidad;
+    @FXML
     private Button bAnh;
     @FXML
     private Button bMod;
@@ -91,6 +93,7 @@ public class JudokasController implements Initializable {
                 judokaDAO.anhadirJudoka(j);
                 judokas.clear();
                 judokas.addAll(judokaDAO.obtenerJudokas());
+                cantidad.setText(Integer.toString(judokas.size()));
                 handleLim();
             }
         }
@@ -110,6 +113,7 @@ public class JudokasController implements Initializable {
             alert.setTitle("Error");
             alert.setHeaderText("Ningún judoka seleccionado");
             alert.showAndWait();
+
             return;
         }
         if(camposSonValidos())
@@ -129,6 +133,7 @@ public class JudokasController implements Initializable {
                 judokaDAO.editarJudoka(judokaSeleccionado);
                 judokas.clear();
                 judokas.addAll(judokaDAO.obtenerJudokas());
+                cantidad.setText(Integer.toString(judokas.size()));
                 handleLim();
             }
         }
@@ -181,6 +186,7 @@ public class JudokasController implements Initializable {
             judokaDAO.eliminarJudoka(judokaSeleccionado);
             judokas.clear();
             judokas.addAll(judokaDAO.obtenerJudokas());
+            cantidad.setText(Integer.toString(judokas.size()));
             handleLim();
         }
     }
@@ -210,8 +216,10 @@ public class JudokasController implements Initializable {
         if (terminoBusqueda != null && !terminoBusqueda.trim().isEmpty()) {
             List<Judoka> judokasEncontrados = judokaDAO.obtenerJudokas(terminoBusqueda);
             judokas.addAll(judokasEncontrados);
+            cantidad.setText(Integer.toString(judokas.size()));
         } else {
             judokas.addAll(judokaDAO.obtenerJudokas());
+            cantidad.setText(Integer.toString(judokas.size()));
         }
     }
 
@@ -262,6 +270,7 @@ public class JudokasController implements Initializable {
                         rellenarFormulario(judokaSeleccionado);
                     }
                 });
+        cantidad.setText(Integer.toString(judokas.size()));
     }
 
     private void rellenarFormulario(Judoka judokaSeleccionado) {

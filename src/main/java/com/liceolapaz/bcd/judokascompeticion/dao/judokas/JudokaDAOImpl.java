@@ -73,7 +73,7 @@ public class JudokaDAOImpl implements JudokasDAO {
         Session session = DatabaseConnection.getSessionFactory().openSession();
 
         try {
-            session.beginTransaction();
+            session.getTransaction().begin();
 
             Integer judokaId = judoka.getId();
 

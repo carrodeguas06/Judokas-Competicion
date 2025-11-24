@@ -2,6 +2,8 @@ package pojos;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "competitions")
 public class Competition {
@@ -25,6 +27,9 @@ public class Competition {
 
     @Column(name = "temp")
     private Integer temp;
+
+    @Column(name = "note", precision = 2, scale = 1)
+    private BigDecimal note;
 
     public Integer getId() {
         return id;
@@ -72,6 +77,14 @@ public class Competition {
 
     public void setTemp(Integer temp) {
         this.temp = temp;
+    }
+
+    public BigDecimal getNote() {
+        return note;
+    }
+
+    public void setNote(BigDecimal note) {
+        this.note = note;
     }
 
 }

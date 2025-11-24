@@ -10,7 +10,6 @@ import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -20,16 +19,21 @@ import pojos.Competition;
 import pojos.User;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.function.UnaryOperator;
 
 public class CompeticionesController implements Initializable {
 
+    @FXML private Label cantidad;
+    @FXML private Slider iNota;
+    @FXML private TableColumn<Competition,Double> tNota;
     @FXML private TextField searchBar;
     @FXML private TableView<Competition> table;
-    @FXML private TableColumn<Competition, String> tTemp;
+    @FXML private TableColumn<Competition, Integer> tTemp;
     @FXML private TableColumn<Competition,String> tId;
     @FXML private TableColumn<Competition,String> tnombre;
     @FXML private TableColumn<Competition,String> tLugar;
@@ -39,7 +43,7 @@ public class CompeticionesController implements Initializable {
     @FXML private TextField iLugar;
     @FXML private ComboBox iPais;
     @FXML private ComboBox iTipo;
-    @FXML private Button bAnh;
+    @FXML private Button bAnh; //TODO arreglar el slideBar
     @FXML private Button bMod;
     @FXML
     private Button bLim;
@@ -61,6 +65,7 @@ public class CompeticionesController implements Initializable {
             iTipo.setEditable(false);
             iPais.setEditable(false);
             iAnho.setEditable(false);
+            iNota.setValueChanging(false);
             bAnh.setVisible(false);
             bMod.setVisible(false);
             bLim.setVisible(false);
@@ -127,19 +132,36 @@ public class CompeticionesController implements Initializable {
         iPais.setValue(competicionSeleccionada.getCountry());
         iTipo.setValue(competicionSeleccionada.getType());
         iAnho.setText(Integer.toString(competicionSeleccionada.getTemp()));
+        iNota.setValue(competicionSeleccionada.getNote().doubleValue());
     }
     private void buscarCompeticiones(String terminoBusqueda) {
         competiciones.clear();
         if (terminoBusqueda != null && !terminoBusqueda.trim().isEmpty()) {
             List<Competition> competicionesEncontradas = competicionesDAO.obtenerCompeticion(terminoBusqueda);
             competiciones.addAll(competicionesEncontradas);
+            cantidad.setText(Integer.toString(competiciones.size()));
         } else {
             competiciones.addAll(competicionesDAO.obtenerCompeticiones());
+            cantidad.setText(Integer.toString(competiciones.size()));
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        final String regex = "\\d*";
+
+        UnaryOperator<TextFormatter.Change> integerFilter = change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches(regex)) {
+                return change;
+            } else {
+                return null;
+            }
+        };
+
+        iAnho.setTextFormatter(new TextFormatter<>(integerFilter));
+
+
         actualizarVista(SessionManager.getInstance().getUsuario());
 
         competiciones = FXCollections.observableArrayList();
@@ -180,6 +202,7 @@ public class CompeticionesController implements Initializable {
                         rellenarFormulario(competicionSeleccionada);
                     }
                 });
+        cantidad.setText(Integer.toString(competiciones.size()));
     }
 
     private void meterEnTabla() {
@@ -189,6 +212,7 @@ public class CompeticionesController implements Initializable {
         tLugar.setCellValueFactory(new PropertyValueFactory<>("city"));
         tPais.setCellValueFactory(new PropertyValueFactory<>("country"));
         tTemp.setCellValueFactory(new PropertyValueFactory<>("temp"));
+        tNota.setCellValueFactory(new PropertyValueFactory<>("note"));
 
         table.setItems(competiciones);
     }
@@ -200,8 +224,9 @@ public class CompeticionesController implements Initializable {
             competition.setName(iNombre.getText());
             competition.setCity(iLugar.getText());
             competition.setCountry(iPais.getValue().toString());
-            competition.setTemp(Integer.parseInt(tTemp.getText()));
+            competition.setTemp(Integer.valueOf(iAnho.getText().trim()));
             competition.setType(iTipo.getValue().toString());
+            competition.setNote(BigDecimal.valueOf(iNota.getValue()));
 
             Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
             confirmacion.setTitle("Confirmar Adición");
@@ -240,8 +265,9 @@ public class CompeticionesController implements Initializable {
                 competicionSeleccionada.setName(iNombre.getText());
                 competicionSeleccionada.setCity(iLugar.getText());
                 competicionSeleccionada.setCountry(iPais.getValue().toString());
-                competicionSeleccionada.setTemp(Integer.parseInt(tTemp.getText()));
+                competicionSeleccionada.setTemp(Integer.parseInt(iAnho.getText()));
                 competicionSeleccionada.setType(iTipo.getValue().toString());
+                competicionSeleccionada.setNote(BigDecimal.valueOf(iNota.getValue()));
                 competicionesDAO.editarCompeticion(competicionSeleccionada);
                 competiciones.clear();
                 competiciones.addAll(competicionesDAO.obtenerCompeticiones());
@@ -268,6 +294,7 @@ public class CompeticionesController implements Initializable {
             competicionesDAO.eliminarCompeticion(competicionSeleccionada);
             competiciones.clear();
             competiciones.addAll(competicionesDAO.obtenerCompeticiones());
+            cantidad.setText(Integer.toString(competiciones.size()));
             handleLim();
         }
     }
@@ -278,6 +305,7 @@ public class CompeticionesController implements Initializable {
         iAnho.clear();
         iTipo.setValue(null);
         iPais.setValue(null);
+        iNota.setValue(0);
         table.getSelectionModel().clearSelection();
     }
 }

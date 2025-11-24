@@ -36,66 +36,78 @@
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints maxHeight="110.4" minHeight="0.0" prefHeight="41.399998092651366" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="110.4" minHeight="10.0" prefHeight="41.399998092651366" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="230.8" minHeight="0.0" prefHeight="39.800000000000004" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="293.40000762939457" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="217.20000762939452" minHeight="21.79999237060545" prefHeight="46.400000000000006" />
                         <RowConstraints maxHeight="184.2" minHeight="40.19999999999999" prefHeight="49.20000000000002" />
+                     <RowConstraints />
                     </rowConstraints>
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="197.0" text="Judoka:" GridPane.columnSpan="2" />
-                        <Label text="Nombre:" GridPane.rowIndex="1">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="197.0" text="Judokas:" GridPane.columnSpan="2" />
+                        <Label text="Nombre:" GridPane.rowIndex="2">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <TextField fx:id="iNombre" promptText="Nombre" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="iNombre" promptText="Nombre" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Label text="Apellido:" GridPane.rowIndex="2">
+                        <Label text="Apellido:" GridPane.rowIndex="3">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <TextField fx:id="iApellido" promptText="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <TextField fx:id="iApellido" promptText="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="3">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Label text="Pais:" GridPane.rowIndex="3">
+                        <Label text="Pais:" GridPane.rowIndex="4">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <ComboBox fx:id="iPais" prefHeight="26.0" prefWidth="95.0" promptText="Pais" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <ComboBox fx:id="iPais" prefHeight="26.0" prefWidth="95.0" promptText="Pais" GridPane.columnIndex="1" GridPane.rowIndex="4">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </ComboBox>
-                        <Label text="Cinturón:" GridPane.rowIndex="4">
+                        <Label text="Cinturón:" GridPane.rowIndex="5">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <ComboBox fx:id="iCinturon" prefHeight="26.0" prefWidth="96.0" promptText="Cinturon" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <ComboBox fx:id="iCinturon" prefHeight="26.0" prefWidth="96.0" promptText="Cinturon" GridPane.columnIndex="1" GridPane.rowIndex="5">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </ComboBox>
-                        <Label text="Técnica Especial:" GridPane.rowIndex="5">
+                        <Label text="Técnica Especial:" GridPane.rowIndex="6">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <ComboBox fx:id="iTecnica" prefHeight="26.0" prefWidth="96.0" promptText="Tecnica" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <ComboBox fx:id="iTecnica" prefHeight="26.0" prefWidth="96.0" promptText="Tecnica" GridPane.columnIndex="1" GridPane.rowIndex="6">
                             <GridPane.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </GridPane.margin>
                         </ComboBox>
+                     <Label text="Cantidad:" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </Label>
+                     <Label fx:id="cantidad" text="(cantidad)" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </Label>
                     </children>
                 </GridPane>
                 <HBox alignment="CENTER" spacing="10">

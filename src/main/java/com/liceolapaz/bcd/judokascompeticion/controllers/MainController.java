@@ -29,20 +29,12 @@ public class MainController {
     {
         ViewSwitcher.setMainPane(mainContentPane);
         ViewSwitcher.switchView(AppView.BIENVENIDO);
-        actualizarVista(SessionManager.getInstance().getUsuario());
     }
 
     @FXML
     private void handleShowJudokas()
     {ViewSwitcher.switchView(AppView.JUDOKAS);}
 
-    public void actualizarVista(User user) {
-        if (user.getAdmin()==1) {
-            admin.setVisible(true);
-        } else {
-            admin.setVisible(false);
-        }
-    }
 
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {

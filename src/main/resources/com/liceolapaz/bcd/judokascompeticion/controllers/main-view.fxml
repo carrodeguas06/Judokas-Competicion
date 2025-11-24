@@ -17,12 +17,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Competiciones">
                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#handleCompeticiones" text="Coompeticiones"/>
-                    </items>
-                </Menu>
-                <Menu fx:id="admin" mnemonicParsing="false" text="Administrador">
-                    <items>
-
+                        <MenuItem mnemonicParsing="false" onAction="#handleCompeticiones" text="Competiciones"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Mi Usuario">

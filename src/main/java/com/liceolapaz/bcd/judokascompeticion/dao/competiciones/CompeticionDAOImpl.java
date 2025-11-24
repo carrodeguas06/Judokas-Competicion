@@ -14,6 +14,7 @@ public class CompeticionDAOImpl implements CompeticionesDAO{
         session.getTransaction().begin();
         session.persist(competition);
         session.getTransaction().commit();
+        session.close();
     }
 
     @Override
@@ -27,14 +28,17 @@ public class CompeticionDAOImpl implements CompeticionesDAO{
     @Override
     public void editarCompeticion(Competition competition) {
         Session session = DatabaseConnection.getSessionFactory().openSession();
+        session.getTransaction().begin();
         Query query = session.createQuery("update Competition c set c.name = :name, c.city= :city, c.country = :country, c.temp = :temp, c.type = :type where id = :id");
         query.setParameter("name", competition.getName());
         query.setParameter("city", competition.getCity());
         query.setParameter("country", competition.getCountry());
-        query.setParameter("temp", competition.getTemp());
+        query.setParameter("temp", Integer.valueOf(competition.getTemp()));
         query.setParameter("type", competition.getType());
         query.setParameter("id", competition.getId());
         query.executeUpdate();
+        session.getTransaction().commit();
+
     }
 
     @Override

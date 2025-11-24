@@ -12,7 +12,6 @@ public class DatabaseConnection {
 
 
     public static SessionFactory getSessionFactory() {
-
         if (sessionFactory == null) {
             try {
                 sessionFactory = new Configuration().configure().buildSessionFactory();
