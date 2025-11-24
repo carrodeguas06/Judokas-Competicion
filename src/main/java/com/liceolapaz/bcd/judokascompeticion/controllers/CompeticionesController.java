@@ -22,6 +22,7 @@ import pojos.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class CompeticionesController implements Initializable {
@@ -104,6 +105,21 @@ public class CompeticionesController implements Initializable {
             }
         });
     }
+
+    private boolean camposSonValidos() {
+        if (iNombre.getText().isEmpty()||
+                iLugar.getText().isEmpty()||
+                iAnho.getText().isEmpty()||
+                iPais.getValue() == null ||
+                iTipo.getValue() == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
     private void rellenarFormulario(Competition  competition)
     {
         iNombre.setText(competicionSeleccionada.getName());
@@ -177,15 +193,91 @@ public class CompeticionesController implements Initializable {
         table.setItems(competiciones);
     }
 
-    public void handleAnh(ActionEvent actionEvent) {
+    public void handleAnh() {
+        if(camposSonValidos())
+        {
+            Competition competition = new Competition();
+            competition.setName(iNombre.getText());
+            competition.setCity(iLugar.getText());
+            competition.setCountry(iPais.getValue().toString());
+            competition.setTemp(Integer.parseInt(tTemp.getText()));
+            competition.setType(iTipo.getValue().toString());
+
+            Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmacion.setTitle("Confirmar Adición");
+            confirmacion.setHeaderText("¿Estás seguro de que quieres añadir " + competition.getName() + "?");
+            confirmacion.setContentText("Esta acción no se puede deshacer.");
+
+            Optional<ButtonType> resultado = confirmacion.showAndWait();
+            if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
+                competicionesDAO.anhadirCompeticion(competition);
+                competiciones.clear();
+                competiciones.addAll(competicionesDAO.obtenerCompeticiones());
+                handleLim();
+            }
+            competicionesDAO.anhadirCompeticion(competition);
+        }
     }
 
-    public void handleMod(ActionEvent actionEvent) {
+    public void handleMod() {
+        if(this.competicionSeleccionada == null)
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText("Ninguna competición seleccionada");
+            alert.showAndWait();
+            return;
+        }
+        if (camposSonValidos())
+        {
+            Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmacion.setTitle("Confirmar Edición");
+            confirmacion.setHeaderText("¿Estás seguro de que quieres editar " + competicionSeleccionada.getName() + "?");
+            confirmacion.setContentText("Esta acción no se puede deshacer.");
+            Optional<ButtonType> resultado = confirmacion.showAndWait();
+            if (resultado.isPresent() && resultado.get() == ButtonType.OK)
+            {
+                competicionSeleccionada.setName(iNombre.getText());
+                competicionSeleccionada.setCity(iLugar.getText());
+                competicionSeleccionada.setCountry(iPais.getValue().toString());
+                competicionSeleccionada.setTemp(Integer.parseInt(tTemp.getText()));
+                competicionSeleccionada.setType(iTipo.getValue().toString());
+                competicionesDAO.editarCompeticion(competicionSeleccionada);
+                competiciones.clear();
+                competiciones.addAll(competicionesDAO.obtenerCompeticiones());
+                handleLim();
+            }
+        }
     }
 
-    public void handleEli(ActionEvent actionEvent) {
+    public void handleEli() {
+        if (competicionSeleccionada == null)
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setHeaderText("Seleccione la competición");
+            return;
+        }
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Confirmar Eliminación");
+        confirmacion.setHeaderText("¿Estás seguro de que quieres eliminar " + competicionSeleccionada.getName() + "?");
+        confirmacion.setContentText("Esta acción no se puede deshacer.");
+
+        Optional<ButtonType> resultado = confirmacion.showAndWait();
+        if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
+            competicionesDAO.eliminarCompeticion(competicionSeleccionada);
+            competiciones.clear();
+            competiciones.addAll(competicionesDAO.obtenerCompeticiones());
+            handleLim();
+        }
     }
 
-    public void handleLim(ActionEvent actionEvent) {
+    public void handleLim() {
+        iNombre.clear();
+        iLugar.clear();
+        iAnho.clear();
+        iTipo.setValue(null);
+        iPais.setValue(null);
+        table.getSelectionModel().clearSelection();
     }
 }

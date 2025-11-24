@@ -23,9 +23,4 @@ public class DatabaseConnection {
         return sessionFactory;
     }
 
-    public static void shutdown() {
-        if (sessionFactory != null) {
-            sessionFactory.close();
-        }
-    }
 }
