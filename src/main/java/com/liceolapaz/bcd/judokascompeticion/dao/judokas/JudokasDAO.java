@@ -9,6 +9,5 @@ public interface JudokasDAO {
     void anhadirJudoka(Judoka judoka);
     void eliminarJudoka(Judoka judoka);
     void editarJudoka(Judoka judoka);
-    Judoka obtenerJudoka(int id);
     List<Judoka> obtenerJudokas(String nombre);
 }

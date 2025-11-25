@@ -92,10 +92,6 @@ public class LogInController implements Initializable {
         Platform.runLater(() -> usuario.requestFocus());
     }
 
-    public static User getUsuarioSelecionado() {
-        return usuarioSelecionado;
-    }
-
     public void registerClic(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(AppView.REGISTER.getFxmlFile())));

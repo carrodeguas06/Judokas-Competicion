@@ -1,7 +1,6 @@
 package com.liceolapaz.bcd.judokascompeticion.dao.competiciones;
 
 import pojos.Competition;
-import pojos.Judoka;
 
 import java.util.List;
 

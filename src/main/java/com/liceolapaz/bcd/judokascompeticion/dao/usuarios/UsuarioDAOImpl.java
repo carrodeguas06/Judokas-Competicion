@@ -27,24 +27,6 @@ public class UsuarioDAOImpl implements UsuariosDAO {
     }
 
     @Override
-    public User obtenerUsuario(int id) {
-        User usuario = null;
-        Session session = DatabaseConnection.getSessionFactory().openSession();
-        try {
-            Query query = session.createQuery("from User where id = :id", User.class);
-            query.setParameter("id", id);
-            usuario = (User) query.getSingleResult();
-        } catch (Exception e) {
-            System.out.println("No se encontro el usuario");
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return usuario;
-    }
-
-    @Override
     public User crearUsuario(User user) {
         Session session = DatabaseConnection.getSessionFactory().openSession();
         session.getTransaction().begin();

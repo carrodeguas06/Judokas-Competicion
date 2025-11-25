@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface UsuariosDAO {
     List<User> obtenerUsuarios();
-    User obtenerUsuario(int id);
     User crearUsuario(User user);
     User editarUsuario(User user);
     List<User> buscarUsuario(String string);

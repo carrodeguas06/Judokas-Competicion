@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.misJudokasController">
+    <children>
+        <HBox prefHeight="575.0" prefWidth="990.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="507.0" prefWidth="567.0">
+               <children>
+                      <TableView fx:id="table" prefHeight="516.0" prefWidth="465.0">
+                          <columns>
+                              <TableColumn fx:id="tnombre" prefWidth="142.6000074148178" text="Nombre" />
+                              <TableColumn fx:id="tApellido" prefWidth="197.8000030517578" text="Apellido" />
+                              <TableColumn fx:id="tPais" prefWidth="122.20001220703125" text="Pais" />
+                          </columns>
+                      </TableView>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin></VBox>
+            <VBox alignment="CENTER" layoutX="536.0" layoutY="10.0" prefHeight="507.0" prefWidth="567.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="486.0">
+                     <children>
+                        <Button fx:id="elim" layoutX="126.0" layoutY="20.0" mnemonicParsing="false" onAction="#onRemJudoka" text="Eliminar" />
+                        <Button fx:id="an" mnemonicParsing="false" onAction="#onAddJudoka" text="Añadir">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Label text="Cantidad de Favoritos:" />
+                        <Label fx:id="cantidad" text="(cantidad)" />
+                     </children></HBox>
+                  <TableView fx:id="tablaF" prefHeight="477.0" prefWidth="465.0">
+                    <columns>
+                      <TableColumn fx:id="nombreF" prefWidth="131.2000366449356" text="Nombre" />
+                      <TableColumn fx:id="apellidoF" prefWidth="190.39996337890625" text="Apellido" />
+                        <TableColumn fx:id="paisF" prefWidth="142.5999755859375" text="Pais" />
+                    </columns>
+                  </TableView>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin></VBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

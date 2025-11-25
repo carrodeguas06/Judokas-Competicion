@@ -16,25 +16,6 @@ public class JudokaDAOImpl implements JudokasDAO {
     }
 
     @Override
-    public Judoka obtenerJudoka(int id) {
-        Judoka judoka = null;
-        Session session = DatabaseConnection.getSessionFactory().openSession();
-
-        try {
-            Query query = session.createQuery("FROM Judoka j WHERE j.id = :id", Judoka.class);
-            query.setParameter("id", id);
-            judoka = (Judoka) query.getSingleResult();
-        } catch (Exception e) {
-            System.out.println("No se puede encontrar judoka");
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-        return judoka;
-    }
-
-    @Override
     public List obtenerJudokas(String nombre) {
         Session session = DatabaseConnection.getSessionFactory().openSession();
         Query query = session.createQuery("FROM Judoka j WHERE LOWER(j.name) LIKE :search OR LOWER(j.lastName) LIKE :search", Judoka.class);

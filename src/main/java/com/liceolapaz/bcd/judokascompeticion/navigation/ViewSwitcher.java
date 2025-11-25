@@ -11,10 +11,6 @@ public class ViewSwitcher
 {
     private static BorderPane mainPane;
 
-    public static BorderPane getMainPane() {
-        return mainPane;
-    }
-
     public static void setMainPane(BorderPane mainPane)
     {
         ViewSwitcher.mainPane = mainPane;

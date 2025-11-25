@@ -12,7 +12,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import pojos.User;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -35,6 +34,7 @@ public class MainController {
     @FXML
     public void initialize()
     {
+        actualizarVista();
         ViewSwitcher.setMainPane(mainContentPane);
         ViewSwitcher.switchView(AppView.BIENVENIDO);
     }
@@ -57,17 +57,6 @@ public class MainController {
         stage.setTitle("Judokas Competición - Inicio de sesión");
         stage.show();
     }
-
-
-
-    private void showAlert(String title, String message)
-    {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
     public void handleMiPerfil(ActionEvent event) {
         ViewSwitcher.switchView(AppView.MIPERFIL);
     }
@@ -78,5 +67,9 @@ public class MainController {
 
     public void handleUsuarios(ActionEvent actionEvent) {
         ViewSwitcher.switchView(AppView.USERS);
+    }
+
+    public void handleMisJudokas(ActionEvent actionEvent) {
+        ViewSwitcher.switchView(AppView.MISJUDOKAS);
     }
 }

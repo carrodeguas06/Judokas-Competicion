@@ -7,23 +7,18 @@ import com.liceolapaz.bcd.judokascompeticion.navigation.ViewSwitcher;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
+
 import pojos.User;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class EditarController implements Initializable {
@@ -40,8 +35,6 @@ public class EditarController implements Initializable {
     private PasswordField contrasena;
     @FXML
     private PasswordField rcontrasena;
-
-    private static User usuarioSelecionado;
     static List<User> usuarios = new ArrayList<>();
     static UsuarioDAOImpl usuarioDAO = new UsuarioDAOImpl();
 
