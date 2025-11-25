@@ -9,4 +9,6 @@ public interface UsuariosDAO {
     User obtenerUsuario(int id);
     User crearUsuario(User user);
     User editarUsuario(User user);
+    List<User> buscarUsuario(String string);
+    void setAdmin(User user);
 }

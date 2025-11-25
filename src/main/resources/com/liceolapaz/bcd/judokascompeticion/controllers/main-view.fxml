@@ -20,6 +20,11 @@
                         <MenuItem mnemonicParsing="false" onAction="#handleCompeticiones" text="Competiciones"/>
                     </items>
                 </Menu>
+                <Menu fx:id="admin" mnemonicParsing="false" text="Usuario">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleUsuarios" text="Usuarios"/>
+                    </items>
+                </Menu>
                 <Menu mnemonicParsing="false" text="Mi Usuario">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleMiPerfil" text="Mi Perfil"/>

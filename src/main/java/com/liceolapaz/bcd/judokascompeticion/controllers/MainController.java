@@ -24,6 +24,14 @@ public class MainController {
     @FXML
     private Menu admin;
 
+    public void actualizarVista()
+    {
+        if(SessionManager.getInstance().getUsuario().getAdmin() == 0)
+            {
+            admin.setVisible(false);
+            }
+    }
+
     @FXML
     public void initialize()
     {
@@ -66,5 +74,9 @@ public class MainController {
 
     public void handleCompeticiones(ActionEvent event) {
         ViewSwitcher.switchView(AppView.COMPETICIONES);
+    }
+
+    public void handleUsuarios(ActionEvent actionEvent) {
+        ViewSwitcher.switchView(AppView.USERS);
     }
 }

@@ -66,4 +66,29 @@ public class UsuarioDAOImpl implements UsuariosDAO {
         query.executeUpdate();
         return null;
     }
+
+    @Override
+    public List<User> buscarUsuario(String string) {
+        Session session = DatabaseConnection.getSessionFactory().openSession();
+        Query query = session.createQuery("from User where name LIKE :name or lastName LIKE :name", User.class);
+        query.setParameter("name", "%"+string+"%");
+
+        return query.getResultList();
+    }
+
+    @Override
+    public void setAdmin(User user) {
+        Session session = DatabaseConnection.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        Query query = session.createQuery("update User u set u.admin = :admin where u.id = :id");
+
+        query.setParameter("admin", user.getAdmin());
+        query.setParameter("id", user.getId());
+
+        query.executeUpdate();
+        session.getTransaction().commit();
+    }
+
+    public UsuarioDAOImpl() {
+    }
 }
