@@ -17,7 +17,7 @@ El proyecto está desarrollado principalmente en Java y utiliza el sistema de ge
 * **Lenguaje Principal:** Java (98.3%)
 * **Estilo/Frontend (si aplica):** CSS (1.7%)
 * **Gestor de Dependencias y Build:** Apache Maven
-* **Dependencias Adicionales:** *[Si tienes librerías o frameworks importantes (como Spring Boot, JavaFX, JUnit, etc.), lístalos aquí. Ejemplo: `Spring Boot`, `Hibernate`, `MySQL Connector`.]*
+* **Dependencias Adicionales:** *`JavaFX`, `Hibernate`, `MySQL Connector`.*
 
 ## 🚀 Instalación y Configuración
 
@@ -47,14 +47,8 @@ Necesitas tener instalado lo siguiente en tu sistema:
     *(Este comando generará el archivo JAR o WAR en el directorio `target/`.)*
 
 3.  **Configuración de la Base de Datos (si aplica):**
-    * *[Si el proyecto requiere una base de datos (p. ej., MySQL, PostgreSQL), incluye aquí los pasos para crear el esquema y cargar datos iniciales. Ejemplo: `mysql -u root -p < init.sql`]*
+    * * Abre tu gestor de base de datos e inicializa el script situado en la carpeta resouces *
 
 ## 💻 Uso
 
 ### Ejecutar la Aplicación
-
-Una vez que el proyecto ha sido compilado (`mvn clean install`), puedes ejecutarlo desde la línea de comandos (asumiendo que es un archivo JAR ejecutable):
-
-```bash
-java -jar target/judokas-competicion-1.0-SNAPSHOT.jar 
-# (Ajusta el nombre del archivo JAR si es necesario)
