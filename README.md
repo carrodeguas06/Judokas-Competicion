@@ -63,4 +63,3 @@ Once the project has been compiled (`mvn clean install`), you can run it from th
 
 ```bash
 java -jar target/judokas-competicion-1.0-SNAPSHOT.jar 
-# (Adjust the JAR filename as necessary)
