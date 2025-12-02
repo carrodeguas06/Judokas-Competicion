@@ -10,8 +10,6 @@
 
 **Judokas-Competicion** is an application designed for the management, simulation, or tracking of **Judo tournaments and competitions**. The main goal is to provide a robust tool for organizing and registering the matches, rankings, and data of the participating judokas.
 
-**(Note: If the application's actual purpose is different (e.g., it's a web system with Spring Boot, a desktop application with JavaFX, etc.), please edit this paragraph to reflect its main functionality).**
-
 ---
 
 ## ⚙️ Technologies Used
