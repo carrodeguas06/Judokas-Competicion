@@ -43,7 +43,7 @@ public class CompeticionesController implements Initializable {
     @FXML private TextField iLugar;
     @FXML private ComboBox iPais;
     @FXML private ComboBox iTipo;
-    @FXML private Button bAnh; //TODO arreglar el slideBar
+    @FXML private Button bAnh;
     @FXML private Button bMod;
     @FXML
     private Button bLim;
@@ -240,7 +240,6 @@ public class CompeticionesController implements Initializable {
                 competiciones.addAll(competicionesDAO.obtenerCompeticiones());
                 handleLim();
             }
-            competicionesDAO.anhadirCompeticion(competition);
         }
     }
 

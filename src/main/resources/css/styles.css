@@ -1,0 +1,53 @@
+.table-view {
+    -fx-opacity: 0.8;
+    -fx-border-radius: 10;
+}
+.text-field
+{
+    -fx-opacity: 0.8;
+    -fx-border-radius: 1;
+}
+
+#bienvenido
+{
+    -fx-background-image: url("../img/bienvenido.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+#competiciones{
+    -fx-background-image: url("../img/competiciones.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+#judokas{
+    -fx-background-image: url("../img/judokas.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+#login{
+    -fx-background-image: url("../img/logIn.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+#miPerfil{
+    -fx-background-image: url("../img/usuario.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+#judokasFavoritos{
+    -fx-background-image: url("../img/judokasFavoritos.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+#usuarios{
+    -fx-background-image: url("../img/usuarios.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}

@@ -34,7 +34,7 @@ public class LogInController implements Initializable {
     private Button register;
 
     @FXML
-    private TextField usuario;
+    private TextField usuarioo;
 
     @FXML
     private PasswordField contrasena;
@@ -58,19 +58,19 @@ public class LogInController implements Initializable {
     }
     private boolean validar()
     {
-        if(usuario.getText().isEmpty()||contrasena.getText().isEmpty())
+        if(usuarioo.getText().isEmpty()||contrasena.getText().isEmpty())
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText("Rellena los campos");
             alert.showAndWait();
-            usuario.clear();
+            usuarioo.clear();
             contrasena.clear();
         }
         else
         {
             for (User u : usuarios) {
-                if (u.getPassword().equals(contrasena.getText()) && (u.getNickname().equals(usuario.getText())))
+                if (u.getPassword().equals(contrasena.getText()) && (u.getNickname().equals(usuarioo.getText())))
                 {
                     usuarioSelecionado = u;
                     return true;
@@ -80,7 +80,7 @@ public class LogInController implements Initializable {
             alert.setTitle("Error");
             alert.setHeaderText("El usuario o la contraseña es incorrecto");
             alert.showAndWait();
-            usuario.clear();
+            usuarioo.clear();
             contrasena.clear();
         }
         return false;
@@ -89,7 +89,7 @@ public class LogInController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         usuarios.addAll(usuarioDAO.obtenerUsuarios());
-        Platform.runLater(() -> usuario.requestFocus());
+        Platform.runLater(() -> usuarioo.requestFocus());
     }
 
     public void registerClic(ActionEvent event) throws IOException {

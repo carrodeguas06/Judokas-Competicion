@@ -17,5 +17,7 @@ public class Application extends javafx.application.Application {
         stage.setScene(scene);
         stage.show();
         stage.centerOnScreen();
+        String cssPath = getClass().getResource("/css/styles.css").toExternalForm();
+        scene.getStylesheets().add(cssPath);
     }
 }

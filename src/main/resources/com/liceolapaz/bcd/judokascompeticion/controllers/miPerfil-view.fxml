@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.MiPerfilController">
+<VBox id="miPerfil" alignment="CENTER" prefHeight="557.0" prefWidth="989.0" stylesheets="@../../../../../css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.MiPerfilController">
    <children>
       <Label fx:id="nombre" alignment="CENTER" contentDisplay="TOP" prefHeight="42.0" prefWidth="165.0" text="(Nombre)">
          <font>

@@ -22,10 +22,14 @@ public class ViewSwitcher
             System.err.println("Error: el contenido no ha sido inicializado");
             return;
         }
-
         try {
             Parent viewRoot = FXMLLoader.load(Objects.requireNonNull(ViewSwitcher.class.getResource(view.getFxmlFile())));
             mainPane.setCenter(viewRoot);
+            String cssPath = "/css/styles.css";
+
+            String cssResource = ViewSwitcher.class.getResource(cssPath).toExternalForm();
+
+            viewRoot.getStylesheets().add(cssResource);
         }catch (IOException e)
         {
             System.err.println("Error al cargar vista");

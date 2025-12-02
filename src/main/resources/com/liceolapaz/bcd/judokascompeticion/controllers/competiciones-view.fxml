@@ -4,9 +4,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.CompeticionesController">
+<VBox id="competiciones" stylesheets="@../../../../../css/styles.css" prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.CompeticionesController">
     <children>
-        <TextField fx:id="searchBar" prefHeight="43.0" prefWidth="969.0" promptText="Buscar">
+        <TextField  fx:id="searchBar" prefHeight="43.0" prefWidth="969.0" promptText="Buscar">
             <VBox.margin>
                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
             </VBox.margin>

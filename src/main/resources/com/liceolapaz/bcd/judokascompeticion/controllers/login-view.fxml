@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="350.0" prefWidth="500.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.LogInController">
+<VBox id="login"  stylesheets="@../../../../../css/styles.css" alignment="CENTER" prefHeight="350.0" prefWidth="500.0" spacing="15.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.LogInController">
         <children>
             <Label contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" text="Inicia Sesión" textAlignment="CENTER">
                 <font>
@@ -26,7 +26,7 @@
                     <Insets />
                 </VBox.margin>
             </Label>
-            <TextField fx:id="usuario" maxWidth="300.0" minWidth="300.0" promptText="Usuario" />
+            <TextField fx:id="usuarioo" maxWidth="300.0" minWidth="300.0" promptText="Usuario" />
             <Label text="Contraseña:">
                 <font>
                     <Font name="System Bold" size="18.0" />

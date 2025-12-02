@@ -5,8 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="TOP_CENTER" prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.BienvenidoController">
-   <children>
+<?import java.lang.String?>
+<VBox id="bienvenido" alignment="TOP_CENTER" prefHeight="557.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/17.0.12" stylesheets="@../../../../../css/styles.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liceolapaz.bcd.judokascompeticion.controllers.BienvenidoController">
+    <children>
       <Label fx:id="bienvenidoLabel" text="¡Bienvenido!">
          <font>
             <Font name="DejaVu Sans Bold" size="38.0" />

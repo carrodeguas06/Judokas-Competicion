@@ -76,6 +76,9 @@ public class misJudokasController implements Initializable {
         this.usuarioLogueado = SessionManager.getInstance().getUsuario();
 
         judokas.addAll(judokaDAO.obtenerJudokas());
+        judokasFavoritos = FXCollections.observableArrayList();
+        judokasFavoritos.addAll(judokasUsuariosDAO.obtenerJudokas(SessionManager.getInstance().getUsuario()));
+        judokas.removeAll(judokasFavoritos);
         meterEnTabla();
 
 
@@ -86,8 +89,7 @@ public class misJudokasController implements Initializable {
                     an.setDisable(false);
                 });
 
-        judokasFavoritos = FXCollections.observableArrayList();
-        judokasFavoritos.addAll(judokasUsuariosDAO.obtenerJudokas(SessionManager.getInstance().getUsuario()));
+
 
         meterEnTablaF();
 
