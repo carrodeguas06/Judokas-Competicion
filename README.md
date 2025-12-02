@@ -1,54 +1,68 @@
 # Judokas-Competicion
 
-![Estado del Build](https://img.shields.io/badge/Status-En%20Desarrollo-orange)
-![Tecnología Principal](https://img.shields.io/badge/Lenguaje-Java-blue)
+![Build Status](https://img.shields.io/badge/Status-In%20Development-orange)
+![Main Technology](https://img.shields.io/badge/Language-Java-blue)
 ![Build Tool](https://img.shields.io/badge/Build-Maven-red)
 
-## 🥋 Descripción del Proyecto
+---
 
-**Judokas-Competicion** es una aplicación diseñada para la gestión, simulación o seguimiento de torneos y competiciones de Judo. El objetivo principal es proporcionar una herramienta robusta para organizar y registrar los combates, clasificaciones y datos de los judokas participantes.
+## 🥋 Project Description
 
-**(Nota: Si el propósito real de la aplicación es diferente (por ejemplo, es un sistema web con Spring Boot, una aplicación de escritorio con JavaFX, etc.), por favor, edita este párrafo para reflejar su funcionalidad principal).**
+**Judokas-Competicion** is an application designed for the management, simulation, or tracking of **Judo tournaments and competitions**. The main goal is to provide a robust tool for organizing and registering the matches, rankings, and data of the participating judokas.
 
-## ⚙️ Tecnologías Utilizadas
+**(Note: If the application's actual purpose is different (e.g., it's a web system with Spring Boot, a desktop application with JavaFX, etc.), please edit this paragraph to reflect its main functionality).**
 
-El proyecto está desarrollado principalmente en Java y utiliza el sistema de gestión de dependencias y construcción **Maven**.
+---
 
-* **Lenguaje Principal:** Java (98.3%)
-* **Estilo/Frontend (si aplica):** CSS (1.7%)
-* **Gestor de Dependencias y Build:** Apache Maven
-* **Dependencias Adicionales:** *`JavaFX`, `Hibernate`, `MySQL Connector`.*
+## ⚙️ Technologies Used
 
-## 🚀 Instalación y Configuración
+The project is primarily developed in **Java** and utilizes the **Maven** dependency management and build system.
 
-Sigue estos pasos para obtener una copia funcional del proyecto en tu máquina local.
+* **Primary Language:** Java (98.3%)
+* **Style/Frontend (if applicable):** CSS (1.7%)
+* **Dependency Manager and Build Tool:** Apache Maven
+* **Additional Dependencies:** *`JavaFX`, `Hibernate`, `MySQL Connector`.*
 
-### Prerrequisitos
+---
 
-Necesitas tener instalado lo siguiente en tu sistema:
+## 🚀 Installation and Setup
 
-1.  **Java Development Kit (JDK):** Versión 11 o superior (recomendado).
-2.  **Apache Maven:** Versión 3.x.x.
-3.  **Git:** Para clonar el repositorio.
+Follow these steps to get a functional copy of the project running on your local machine.
 
-### Pasos de Instalación
+### Prerequisites
 
-1.  **Clonar el repositorio:**
+You need the following installed on your system:
+
+1.  **Java Development Kit (JDK):** Version 11 or higher (recommended).
+2.  **Apache Maven:** Version 3.x.x.
+3.  **Git:** To clone the repository.
+
+### Installation Steps
+
+1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/carrodeguas06/Judokas-Competicion.git](https://github.com/carrodeguas06/Judokas-Competicion.git)
     cd Judokas-Competicion
     ```
 
-2.  **Compilar el Proyecto con Maven:**
-    Ejecuta el siguiente comando para descargar las dependencias y compilar el código fuente:
+2.  **Compile the Project with Maven:**
+    Run the following command to download dependencies and compile the source code:
     ```bash
     mvn clean install
     ```
-    *(Este comando generará el archivo JAR o WAR en el directorio `target/`.)*
+    *(This command will generate the executable JAR or WAR file in the `target/` directory.)*
 
-3.  **Configuración de la Base de Datos (si aplica):**
-    * * Abre tu gestor de base de datos e inicializa el script situado en la carpeta resouces *
+3.  **Database Configuration (if applicable):**
+    * Open your database manager and **initialize the script** located in the `resources` folder.
 
-## 💻 Uso
+---
 
-### Ejecutar la Aplicación
+## 💻 Usage
+
+### Running the Application
+
+Once the project has been compiled (`mvn clean install`), you can run it from the command line (assuming it's an executable JAR file):
+
+```bash
+java -jar target/judokas-competicion-1.0-SNAPSHOT.jar 
+# (Adjust the JAR filename as necessary)
